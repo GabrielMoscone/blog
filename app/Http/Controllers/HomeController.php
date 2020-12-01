@@ -15,7 +15,7 @@ class HomeController extends Controller
         $categories = Category::all();
 
 
-        $posts = Post::where('active', true)->take(3)->get();
+        $posts = Post::where('active', true)->orderBy('id', 'DESC')->take(3)->get();
 
         return view('home', [
             'categories' => $categories,
